@@ -163,19 +163,33 @@ ul {
   }
 } */
 
-@media screen and (min-width: 768px) {
+/* @media screen and (min-width: 768px) {
     .music-list {
       grid-template-columns: repeat(3, 1fr);
+    }
+  } */
+
+  .musiclist-main {
+    width: 90vw;
+    max-width: 1300px;
+    margin: 2rem auto;
+    display: grid;
+    gap: 3rem;
+  }
+  
+  @media screen and (min-width: 768px) {
+    .musiclist-main {
+      grid-template-columns: repeat(4, 1fr);
     }
   }
 
 /* Music List Items */
-.music-list-item {
+.music-list-item-main {
   padding: 10px;
   min-height: 250px;
   max-width: 300px;
-  background-size: cover;
-  background-repeat: no-repeat;
+  /* background-size: cover;
+  background-repeat: no-repeat; */
   /* opacity: 0; 
   transition: opacity 0.4s ease-in; 
   display: flex;  */
@@ -197,13 +211,13 @@ ul {
 }
 
 /* Song Creator */
-.song-title {
-    font-size: 18px;
+.song-title-main {
+    font-size: 24px;
     color: white;
     margin-bottom: 8px;
   }
   
-  .song-creator {
-    font-size: 12px;
+  .song-creator-main {
+    font-size: 16px;
     color: white;
   }

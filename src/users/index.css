@@ -121,19 +121,60 @@ display: grid;
 }
   
   
-@media screen and (min-width: 768px) {
-    .music-list {
-    grid-template-columns: repeat(3, 1fr);
+.musiclist {
+    width: 90vw;
+    max-width: 1300px;
+    margin: 2rem auto;
+    display: grid;
+    gap: 3rem;
+  }
+  
+  @media screen and (min-width: 768px) {
+    .musiclist {
+      grid-template-columns: repeat(6, 1fr);
     }
-}
+  }
   
   /* Music List Items */
 .music-list-item {
-    padding: 10px;
+    padding: 5px;
     min-height: 250px;
     max-width: 300px;
     background-size: cover;
     background-repeat: no-repeat;
+}
+
+.artistlist {
+    width: 90vw;
+    max-width: 1300px;
+    margin: 2rem auto;
+    display: grid;
+    gap: 3rem;
+  }
+  
+  @media screen and (min-width: 768px) {
+    .artistlist {
+      grid-template-columns: repeat(6, 1fr);
+    }
+  }
+
+.artist-pic {
+    border-radius: 50%;
+    border-color: white;
+    border-width: 5px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin-bottom: 10px;
+}
+  
+  /* Music List Items */
+.artist-list-item {
+    padding: 5px;
+    min-height: 250px;
+    max-width: 250px;
+    background-size: cover;
+    background-repeat: no-repeat;
+   
 }
   
   /* Main Navigation */
@@ -160,4 +201,20 @@ display: grid;
 
 #pfp {
     border-radius: 50%;
+}
+
+.spacer {
+    margin-bottom: 200px;
+}
+
+.spacer-small {
+    margin-bottom: 50px;
+}
+
+.login-button {
+    background-color: white;
+    color: #0e0e0e;
+    width: 200px;
+    height: 30px;
+    border-radius: 10px;
 }
