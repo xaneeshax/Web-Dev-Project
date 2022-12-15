@@ -1,24 +1,62 @@
 import {useDispatch, useSelector} from "react-redux";
 import {useEffect, useState} from "react";
-import {findSongBySearchTermThunk} from "./bopify-thunks";
 import {userLikesSongThunk} from "../likes/likes-thunks";
+import Login from './Login.js';
 
 const BopifySearch = () => {
-    const [searchTerm, setSearchTerm] = useState('Avatar')
+    const [searchTerm, setSearchTerm] = useState('')
     const {songs, loading} = useSelector((state) => state.bopify)
+    const [accessToken, setAccessToken] = useState('');
+    const [albums, setAlbums] = useState([]);
     const dispatch = useDispatch()
+
     useEffect(() => {
-        dispatch(findSongBySearchTermThunk(searchTerm))
+        const queryString = window.location.hash;
+
+        if (queryString) {
+            const queryList = queryString.replace('#', '').split('&');
+            let accessString = queryList[0];
+            accessString = accessString.split('=')[1];
+            setAccessToken(accessString);
+        }
     }, [])
+
+    async function search() {
+        console.log('Search for ' + searchTerm);
+
+        const searchParams = {
+            method: 'GET',
+            headers: {
+                'Content-Type' : 'application/json',
+                'Authorization' : 'Bearer ' + accessToken
+            }
+        }
+
+        const artistId = await fetch('https://api.spotify.com/v1/search?q=' + searchTerm + '&type=artist', searchParams)
+            .then(response => response.json())
+            .then(data => { return data.artists.items[0].id });
+
+        console.log('Artist ID is ' + artistId);
+
+        const albums = await fetch('https://api.spotify.com/v1/artists/' + artistId + '/albums' + '?include_groups=album&market=US&limit=50', searchParams)
+            .then(response => response.json())
+            .then(data => {
+                console.log(data);
+                setAlbums(data.items);
+            })
+
+    }
+    console.log(albums);
     return (
         <>
             <h1>Bopify Search</h1>
             <ul className="list-group">
                 <li className="list-group-item">
+                    <Login/>
                     <button
                         className="btn btn-primary float-end"
                         onClick={() => {
-                            dispatch(findSongBySearchTermThunk(searchTerm))
+                            search();
                         }}>Search
                     </button>
                     <input
