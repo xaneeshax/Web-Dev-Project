@@ -1,6 +1,7 @@
 import {useEffect, useState} from "react";
 import {Container, Card, Row} from 'react-bootstrap';
 import Login from './Login.js';
+import {Link} from "react-router-dom";
 
 const BopifySearch = () => {
     const [searchTerm, setSearchTerm] = useState('')
@@ -67,6 +68,7 @@ const BopifySearch = () => {
                                         <Card.Title>
                                             {song.name}
                                         </Card.Title>
+                                        <Link to={`/details/${accessToken}/${song.id}`}><button className="btn btn-primary">Details</button></Link>
                                     </Card.Body>
                                 </Card>
                             )
