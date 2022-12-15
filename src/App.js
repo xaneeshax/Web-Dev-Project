@@ -2,6 +2,7 @@ import Songs from "./songs";
 import {configureStore} from "@reduxjs/toolkit";
 import {Provider} from "react-redux";
 import BopifySearch from "./bopify/bopify-search";
+import BopifyDetails from "./bopify/bopify-details";
 import {likesReducer} from "./likes/likes-reducer";
 import {Routes, Route} from "react-router";
 import {BrowserRouter} from "react-router-dom";
@@ -45,6 +46,7 @@ function App() {
                     <Profile/>
                   </ProtectedRoute>
                 }/>
+                <Route path="/details/:accessToken/:songID" element={<BopifyDetails/>}/>
               </Routes>
             </CurrentUser>
           </BrowserRouter>
