@@ -1,14 +1,11 @@
-import {useDispatch, useSelector} from "react-redux";
 import {useEffect, useState} from "react";
-import {userLikesSongThunk} from "../likes/likes-thunks";
+import {Container, Card, Row} from 'react-bootstrap';
 import Login from './Login.js';
 
 const BopifySearch = () => {
     const [searchTerm, setSearchTerm] = useState('')
-    const {songs, loading} = useSelector((state) => state.bopify)
     const [accessToken, setAccessToken] = useState('');
-    const [albums, setAlbums] = useState([]);
-    const dispatch = useDispatch()
+    const [songs, setSongs] = useState([]);
 
     useEffect(() => {
         const queryString = window.location.hash;
@@ -32,21 +29,14 @@ const BopifySearch = () => {
             }
         }
 
-        const artistId = await fetch('https://api.spotify.com/v1/search?q=' + searchTerm + '&type=artist', searchParams)
-            .then(response => response.json())
-            .then(data => { return data.artists.items[0].id });
-
-        console.log('Artist ID is ' + artistId);
-
-        const albums = await fetch('https://api.spotify.com/v1/artists/' + artistId + '/albums' + '?include_groups=album&market=US&limit=50', searchParams)
+        await fetch('https://api.spotify.com/v1/search?type=track&q=artist:' + searchTerm, searchParams)
             .then(response => response.json())
             .then(data => {
-                console.log(data);
-                setAlbums(data.items);
+                setSongs(data.tracks.items);
             })
 
     }
-    console.log(albums);
+    console.log(songs);
     return (
         <>
             <h1>Bopify Search</h1>
@@ -66,30 +56,22 @@ const BopifySearch = () => {
                         }}
                         value={searchTerm}/>
                 </li>
-                {
-                    songs && songs.map((song) =>
-                        <li key={song.bopifyID} className="list-group-item">
-                            <i onClick={() => {
-                                dispatch(userLikesSongThunk({
-                                    uid: 111, mid: song.bopifyID
-                                }))
-                            }} className="float-end bi bi-hand-thumbs-up"></i>
-                            <i className="float-end bi bi-hand-thumbs-down me-2"></i>
-                            {song.Title}
-                        </li>
-                    )
-                }
             </ul>
             <Container>
                 <Row className="mx- row row-cols-4">
-                    <Card>
-                        <Card.Img src={"#"} />
-                        <Card.Body>
-                            <Card.Title>
-                                Album here
-                            </Card.Title>
-                        </Card.Body>
-                    </Card>
+                    {songs.map((song, i) => {
+                            return (
+                                <Card>
+                                    <Card.Img src={song.album.images[0].url} />
+                                    <Card.Body>
+                                        <Card.Title>
+                                            {song.name}
+                                        </Card.Title>
+                                    </Card.Body>
+                                </Card>
+                            )
+                        }
+                    )}
                 </Row>
             </Container>
         </>
