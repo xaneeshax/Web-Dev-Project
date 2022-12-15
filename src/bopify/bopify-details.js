@@ -4,8 +4,9 @@ import {useDispatch} from 'react-redux';
 import {createSongsThunk} from "../songs/songs-thunks";
 
 const BopifySearch = () => {
-
     const [song, setSong] = useState(null);
+    const [title, setTitle] = useState('');
+    const [artist, setArtist] = useState('');
     const dispatch = useDispatch();
     const {pathname} = useLocation()
     const parts = pathname.split('/')
@@ -36,7 +37,9 @@ const BopifySearch = () => {
     }, [])
 
     function addSong() {
-        return dispatch(createSongsThunk());
+        setArtist(song.artist[0].name);
+        setTitle(song.name); 
+        return dispatch(createSongsThunk({title, artist}));
     }
 
     return (
@@ -46,7 +49,7 @@ const BopifySearch = () => {
             <div>
                 <h3>{song.name}</h3>
                 <h5>{'By: ' + song.artists[0].name}</h5>
-                <button onClick={addSong(song.artists[0].name, song.name, )}>Add Song</button>
+                <button onClick={addSong()} className='btn btn-primary'>Add Song</button>
             </div>}
         </>
     )
