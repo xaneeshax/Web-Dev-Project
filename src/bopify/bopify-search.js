@@ -80,6 +80,18 @@ const BopifySearch = () => {
                     )
                 }
             </ul>
+            <Container>
+                <Row className="mx- row row-cols-4">
+                    <Card>
+                        <Card.Img src={"#"} />
+                        <Card.Body>
+                            <Card.Title>
+                                Album here
+                            </Card.Title>
+                        </Card.Body>
+                    </Card>
+                </Row>
+            </Container>
         </>
     )
 }
