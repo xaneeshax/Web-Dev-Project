@@ -45,7 +45,6 @@ const Login = () => {
             <h2>Welcome to Bopify!</h2>
             <div class="spacer"></div>
             <div class="spacer"></div>
-            <h2>bop bop</h2>
 
         </>
     )

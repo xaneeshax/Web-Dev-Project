@@ -221,3 +221,37 @@ ul {
     font-size: 16px;
     color: white;
   }
+.artistlist {
+    width: 90vw;
+    max-width: 1300px;
+    margin: 2rem auto;
+    display: grid;
+    gap: 3rem;
+}
+
+@media screen and (min-width: 768px) {
+    .artistlist {
+        grid-template-columns: repeat(5, 1fr);
+    }
+}
+
+.artist-pic {
+    border-radius: 50%;
+    border-color: white;
+    border-width: 5px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin-bottom: 10px;
+    max-width: 200px;
+    max-height: 200px;
+}
+
+/* Music List Items */
+.artist-list-item {
+    padding: 5px;
+    min-height: 250px;
+    max-width: 250px;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+}

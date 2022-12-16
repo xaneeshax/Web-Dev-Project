@@ -2,6 +2,7 @@ import Songs from "./songs";
 import {configureStore} from "@reduxjs/toolkit";
 import {Provider} from "react-redux";
 import BopifySearch from "./bopify/bopify-search";
+import BopifyDetails from "./bopify/bopify-details";
 import {likesReducer} from "./likes/likes-reducer";
 import {Routes, Route} from "react-router";
 import {BrowserRouter} from "react-router-dom";
@@ -37,7 +38,10 @@ function App() {
               <Routes>
                 <Route index element={<Songs/>}/>
                 <Route path="/search" element={<BopifySearch/>}/>
-                <Route path="/users" element={<Users/>}/>
+                <Route path="/users" element={
+                  <ProtectedRoute>
+                    <Users/>
+                  </ProtectedRoute>}/>
                 <Route path="/login" element={<Login/>}/>
                 <Route path="/register" element={<Register/>}/>
                 <Route path="/profile" element={
@@ -45,6 +49,7 @@ function App() {
                     <Profile/>
                   </ProtectedRoute>
                 }/>
+                <Route path="/details/:accessToken/:songID" element={<BopifyDetails/>}/>
               </Routes>
             </CurrentUser>
           </BrowserRouter>
