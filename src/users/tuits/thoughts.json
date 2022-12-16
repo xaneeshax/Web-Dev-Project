@@ -1,0 +1,29 @@
+[
+    {
+      "_id": 1,
+      "topic": "Nostalgia",
+      "userName": "alice",
+      "time": "2h",
+      "image": "https://www.lampchart.com/wp-content/uploads/2022/07/IMG_20220729_132950.jpg",
+      "handle": "@alice",
+      "tuit": "Absolutly loving the new Shawn Medes album!"
+    },
+    {
+        "_id": 2,
+        "topic": "Critique",
+        "userName": "alice",
+        "time": "3h",
+        "image": "https://b.thumbs.redditmedia.com/KmipcCTteKvvgRhMH_BkchwN1RT-WyN5fWeUdhh5zio.png",
+        "handle": "@alice",
+        "tuit": "Shawn Mendes's Wonder is definitly not as good as Illuminate"
+    },
+    {
+        "_id": 3,
+        "topic": "Excitement",
+        "userName": "alice",
+        "time": "5h",
+        "image": "https://www.lampchart.com/wp-content/uploads/2022/07/IMG_20220729_132950.jpg",
+        "handle": "@alice",
+        "tuit": "OMG I will being seeing Shawn Mendes live in a few days! Cannot wait for this!"
+      }
+]

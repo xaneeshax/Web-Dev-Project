@@ -31,6 +31,22 @@ h3 {
   color: var(--main-highlight-color);
 }
 
+h7 {
+  color: white;
+}
+
+th,
+td {
+  color: white;
+}
+
+table, th, td {
+  border: 1px solid white;
+}
+
+table {
+  width: 90%;
+}
 
 html,
 body {
@@ -165,6 +181,8 @@ display: grid;
     background-size: cover;
     background-repeat: no-repeat;
     margin-bottom: 10px;
+    max-width: 200px;
+    max-height: 200px;
 }
   
   /* Music List Items */
@@ -218,3 +236,5 @@ display: grid;
     height: 30px;
     border-radius: 10px;
 }
+
+

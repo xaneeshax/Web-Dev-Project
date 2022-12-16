@@ -1,0 +1,29 @@
+.wd-links {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+#pic {
+    color: black;
+    font: 15px;
+    padding:12px;
+    float: center;
+}
+
+#heart-pic {
+    color: red;
+    font: 15px;
+    padding:4%;
+    float: center;
+}
+
+.post-heading {
+    color: white
+}
+
+.post-info {
+    color: white
+}
+

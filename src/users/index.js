@@ -11,7 +11,8 @@ const Users = () => {
     }, [])
     return(
         <>
-            <h1>Users {users.length}</h1>
+            <h1>Bopify Users</h1>
+            <h2>Number of Users: {users.length}</h2>
             <ul className="list-group">
                 {
                     users.map((user) =>
@@ -22,9 +23,10 @@ const Users = () => {
                 }
             </ul>
 
+
             <ul class="sidebar-music">
                 <hr></hr>
-                <h3>Your Daily Mix</h3>
+                <h3>Top Albums</h3>
                 <ul class="musiclist">
                         <article class="music-list-item">
                             <img src="https://images.genius.com/6ec7f3034fb593d32f3298f21aa35245.500x500x1.jpg"/>
@@ -58,40 +60,40 @@ const Users = () => {
                         </article>
                     </ul>
                 <hr></hr>
-                <h3>Top Artists</h3>
-                    <ul class="artistlist">
-                        <article class="artist-list-item">
-                            <img class="artist-pic" src="https://i.scdn.co/image/ab6761610000e5eb46e7a06fa6dfefaed6a3f0db"/>
-                            <h3 class="song-title">Shawn Mendes</h3>
-                            <a href="#"><p class="song-creator">View Page</p></a>
+                <h3>Top Songs</h3>
+                <ul class="musiclist">
+                        <article class="music-list-item">
+                            <img src="https://images.genius.com/6ec7f3034fb593d32f3298f21aa35245.500x500x1.jpg"/>
+                            <h3 class="song-title">How Can I Forget</h3>
+                            <p class="song-creator">MKTO, Ryan Riback</p>
                         </article>
-                        <article class="artist-list-item">
-                            <img class="artist-pic" src="https://i.scdn.co/image/ab6761610000e5eb46e7a06fa6dfefaed6a3f0db"/>
-                            <h3 class="song-title">Shawn Mendes</h3>
-                            <a href="#"><p class="song-creator">View Page</p></a>
+                        <article class="music-list-item">
+                            <img src="https://images.genius.com/6ec7f3034fb593d32f3298f21aa35245.500x500x1.jpg"/>
+                            <h3 class="song-title">How Can I Forget</h3>
+                            <p class="song-creator">MKTO, Ryan Riback</p>
                         </article>
-                        <article class="artist-list-item">
-                            <img class="artist-pic" src="https://i.scdn.co/image/ab6761610000e5eb46e7a06fa6dfefaed6a3f0db"/>
-                            <h3 class="song-title">Shawn Mendes</h3>
-                            <a href="#"><p class="song-creator">View Page</p></a>
+                        <article class="music-list-item">
+                            <img src="https://images.genius.com/6ec7f3034fb593d32f3298f21aa35245.500x500x1.jpg"/>
+                            <h3 class="song-title">How Can I Forget</h3>
+                            <p class="song-creator">MKTO, Ryan Riback</p>
                         </article>
-                        <article class="artist-list-item">
-                            <img class="artist-pic" src="https://i.scdn.co/image/ab6761610000e5eb46e7a06fa6dfefaed6a3f0db"/>
-                            <h3 class="song-title">Shawn Mendes</h3>
-                            <a href="#"><p class="song-creator">View Page</p></a>
+                        <article class="music-list-item">
+                            <img src="https://images.genius.com/6ec7f3034fb593d32f3298f21aa35245.500x500x1.jpg"/>
+                            <h3 class="song-title">How Can I Forget</h3>
+                            <p class="song-creator">MKTO, Ryan Riback</p>
                         </article>
-                        <article class="artist-list-item">
-                            <img class="artist-pic" src="https://i.scdn.co/image/ab6761610000e5eb46e7a06fa6dfefaed6a3f0db"/>
-                            <h3 class="song-title">Shawn Mendes</h3>
-                            <a href="#"><p class="song-creator">View Page</p></a>
+                        <article class="music-list-item">
+                            <img src="https://images.genius.com/6ec7f3034fb593d32f3298f21aa35245.500x500x1.jpg"/>
+                            <h3 class="song-title">How Can I Forget</h3>
+                            <p class="song-creator">MKTO, Ryan Riback</p>
                         </article>
-                        <article class="artist-list-item">
-                            <img class="artist-pic" src="https://i.scdn.co/image/ab6761610000e5eb46e7a06fa6dfefaed6a3f0db"/>
-                            <h3 class="song-title">Shawn Mendes</h3>
-                            <a href="#"><p class="song-creator">View Page</p></a>
+                        <article class="music-list-item">
+                            <img src="https://images.genius.com/6ec7f3034fb593d32f3298f21aa35245.500x500x1.jpg"/>
+                            <h3 class="song-title">How Can I Forget</h3>
+                            <p class="song-creator">MKTO, Ryan Riback</p>
                         </article>
                     </ul>
-                    <hr></hr>
+                <hr></hr>
                 <h3>Recently Played</h3>
                     <ul class="musiclist">
                         <article class="music-list-item">
@@ -126,40 +128,6 @@ const Users = () => {
                         </article>
                     </ul>
                 <hr></hr>   
-                <h3>Top Albums</h3>
-                <ul class="musiclist">
-                        <article class="music-list-item">
-                            <img src="https://images.genius.com/6ec7f3034fb593d32f3298f21aa35245.500x500x1.jpg"/>
-                            <h3 class="song-title">How Can I Forget</h3>
-                            <p class="song-creator">MKTO, Ryan Riback</p>
-                        </article>
-                        <article class="music-list-item">
-                            <img src="https://images.genius.com/6ec7f3034fb593d32f3298f21aa35245.500x500x1.jpg"/>
-                            <h3 class="song-title">How Can I Forget</h3>
-                            <p class="song-creator">MKTO, Ryan Riback</p>
-                        </article>
-                        <article class="music-list-item">
-                            <img src="https://images.genius.com/6ec7f3034fb593d32f3298f21aa35245.500x500x1.jpg"/>
-                            <h3 class="song-title">How Can I Forget</h3>
-                            <p class="song-creator">MKTO, Ryan Riback</p>
-                        </article>
-                        <article class="music-list-item">
-                            <img src="https://images.genius.com/6ec7f3034fb593d32f3298f21aa35245.500x500x1.jpg"/>
-                            <h3 class="song-title">How Can I Forget</h3>
-                            <p class="song-creator">MKTO, Ryan Riback</p>
-                        </article>
-                        <article class="music-list-item">
-                            <img src="https://images.genius.com/6ec7f3034fb593d32f3298f21aa35245.500x500x1.jpg"/>
-                            <h3 class="song-title">How Can I Forget</h3>
-                            <p class="song-creator">MKTO, Ryan Riback</p>
-                        </article>
-                        <article class="music-list-item">
-                            <img src="https://images.genius.com/6ec7f3034fb593d32f3298f21aa35245.500x500x1.jpg"/>
-                            <h3 class="song-title">How Can I Forget</h3>
-                            <p class="song-creator">MKTO, Ryan Riback</p>
-                        </article>
-                    </ul>
-                <hr></hr> 
                 <h3>Favorites</h3>
                 <ul class="musiclist">
                         <article class="music-list-item">
@@ -194,39 +162,6 @@ const Users = () => {
                         </article>
                     </ul>
                 <hr></hr> 
-                <h3>Recommended for You</h3>
-                <ul class="musiclist">
-                        <article class="music-list-item">
-                            <img src="https://images.genius.com/6ec7f3034fb593d32f3298f21aa35245.500x500x1.jpg"/>
-                            <h3 class="song-title">How Can I Forget</h3>
-                            <p class="song-creator">MKTO, Ryan Riback</p>
-                        </article>
-                        <article class="music-list-item">
-                            <img src="https://images.genius.com/6ec7f3034fb593d32f3298f21aa35245.500x500x1.jpg"/>
-                            <h3 class="song-title">How Can I Forget</h3>
-                            <p class="song-creator">MKTO, Ryan Riback</p>
-                        </article>
-                        <article class="music-list-item">
-                            <img src="https://images.genius.com/6ec7f3034fb593d32f3298f21aa35245.500x500x1.jpg"/>
-                            <h3 class="song-title">How Can I Forget</h3>
-                            <p class="song-creator">MKTO, Ryan Riback</p>
-                        </article>
-                        <article class="music-list-item">
-                            <img src="https://images.genius.com/6ec7f3034fb593d32f3298f21aa35245.500x500x1.jpg"/>
-                            <h3 class="song-title">How Can I Forget</h3>
-                            <p class="song-creator">MKTO, Ryan Riback</p>
-                        </article>
-                        <article class="music-list-item">
-                            <img src="https://images.genius.com/6ec7f3034fb593d32f3298f21aa35245.500x500x1.jpg"/>
-                            <h3 class="song-title">How Can I Forget</h3>
-                            <p class="song-creator">MKTO, Ryan Riback</p>
-                        </article>
-                        <article class="music-list-item">
-                            <img src="https://images.genius.com/6ec7f3034fb593d32f3298f21aa35245.500x500x1.jpg"/>
-                            <h3 class="song-title">How Can I Forget</h3>
-                            <p class="song-creator">MKTO, Ryan Riback</p>
-                        </article>
-                    </ul>
             </ul>
         </>
     )
