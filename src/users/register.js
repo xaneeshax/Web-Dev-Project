@@ -56,9 +56,6 @@ const Register = () => {
             }
             <div class="spacer"></div>
             <div class="spacer"></div>
-            <h2>bop bop</h2>
-            <div class="spacer"></div>
-            <h2>bop</h2>
         </>
     )
 }

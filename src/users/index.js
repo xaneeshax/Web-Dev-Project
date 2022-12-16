@@ -4,6 +4,7 @@ import {findAllUsersThunk} from "./users-thunk";
 import "./index.css";
 
 const Users = () => {
+    const {currentUser} = useSelector((state) => state.users)
     const {users, loading} = useSelector((state) => state.users)
     const dispatch = useDispatch()
     useEffect(() => {
@@ -11,6 +12,7 @@ const Users = () => {
     }, [])
     return(
         <>
+            
             <h1>Users {users.length}</h1>
             <ul className="list-group">
                 {

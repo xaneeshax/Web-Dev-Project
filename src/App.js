@@ -38,7 +38,10 @@ function App() {
               <Routes>
                 <Route index element={<Songs/>}/>
                 <Route path="/search" element={<BopifySearch/>}/>
-                <Route path="/users" element={<Users/>}/>
+                <Route path="/users" element={
+                  <ProtectedRoute>
+                    <Users/>
+                  </ProtectedRoute>}/>
                 <Route path="/login" element={<Login/>}/>
                 <Route path="/register" element={<Register/>}/>
                 <Route path="/profile" element={
