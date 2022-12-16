@@ -7,7 +7,7 @@ export default function Login() {
     return (
         <div>
             <Container>
-                <a className="btn btn-success" href={AUTH_URL}>
+                <a className="btn btn-success float-end m-2" href={AUTH_URL}>
                     Login with Spotify
                 </a>
             </Container>

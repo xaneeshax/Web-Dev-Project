@@ -37,7 +37,7 @@ const BopifySearch = () => {
     }, [])
 
     function addSong() {
-        setArtist(song.artist[0].name);
+        setArtist(song.artists[0].name);
         setTitle(song.name); 
         return dispatch(createSongsThunk({title, artist}));
     }

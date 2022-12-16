@@ -2,6 +2,7 @@ import {useEffect, useState} from "react";
 import {Container, Card, Row} from 'react-bootstrap';
 import Login from './Login.js';
 import {Link} from "react-router-dom";
+import './search.css';
 
 const BopifySearch = () => {
     const [searchTerm, setSearchTerm] = useState('')
@@ -41,9 +42,9 @@ const BopifySearch = () => {
     return (
         <>
             <h1>Bopify Search</h1>
-            <ul className="list-group">
+            <Login/>
+            <ul className="list-group mb-2">
                 <li className="list-group-item">
-                    <Login/>
                     <button
                         className="btn btn-primary float-end"
                         onClick={() => {
@@ -59,10 +60,10 @@ const BopifySearch = () => {
                 </li>
             </ul>
             <Container>
-                <Row className="mx- row row-cols-4">
-                    {songs.map((song, i) => {
+                <Row className=" row row-cols-4">
+                    {songs.map((song) => {
                             return (
-                                <Card>
+                                <Card className="p-0">
                                     <Card.Img src={song.album.images[0].url} />
                                     <Card.Body>
                                         <Card.Title>
