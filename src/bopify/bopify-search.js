@@ -2,7 +2,7 @@ import {useEffect, useState} from "react";
 import {Container, Card, Row} from 'react-bootstrap';
 import Login from './Login.js';
 import {Link} from "react-router-dom";
-import './search.css';
+import './index.css';
 
 const BopifySearch = () => {
     const [searchTerm, setSearchTerm] = useState('')
@@ -66,10 +66,10 @@ const BopifySearch = () => {
                                 <Card className="p-0">
                                     <Card.Img src={song.album.images[0].url} />
                                     <Card.Body>
-                                        <Card.Title>
+                                        <Card.Title className="song-name">
                                             {song.name}
                                         </Card.Title>
-                                        <Link to={`/details/${accessToken}/${song.id}`}><button className="btn btn-primary">Details</button></Link>
+                                        <Link to={`/details/${accessToken}/${song.id}`}><button className="btn btn-primary details-button">Details</button></Link>
                                     </Card.Body>
                                 </Card>
                             )

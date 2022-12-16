@@ -1,13 +1,10 @@
 import React, {useEffect, useState} from 'react';
 import {useLocation, useParams} from "react-router";
 import {useDispatch} from 'react-redux';
-import {createSongsThunk} from "../songs/songs-thunks";
+import './index.css';
 
 const BopifySearch = () => {
     const [song, setSong] = useState(null);
-    const [title, setTitle] = useState('');
-    const [artist, setArtist] = useState('');
-    const dispatch = useDispatch();
     const {pathname} = useLocation()
     const parts = pathname.split('/')
     const accessToken = parts[2];
@@ -36,20 +33,19 @@ const BopifySearch = () => {
 
     }, [])
 
-    function addSong() {
-        setArtist(song.artists[0].name);
-        setTitle(song.name); 
-        return dispatch(createSongsThunk({title, artist}));
-    }
 
     return (
         <>
             <h1>Bopify Details</h1>
             { song &&
             <div>
-                <h3>{song.name}</h3>
-                <h5>{'By: ' + song.artists[0].name}</h5>
-                <button onClick={addSong()} className='btn btn-primary'>Add Song</button>
+                <h3 >{song.name}</h3>
+                <img src={song.album.images[0].url}/>
+                <h5 style={{color: 'white'}}>{'By: ' + song.artists[0].name}</h5>
+                <h6 style={{color: 'white'}}>Release Date: {song.album.release_date}</h6>
+                <h6 style={{color: 'white'}}>Album: {song.album.name}</h6>
+                <h6 style={{color: 'white'}}>Track Number: {song.track_number}</h6>
+                <h6 style={{color: 'white'}}>Duration: {song.duration_ms}</h6>
             </div>}
         </>
     )
