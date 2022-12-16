@@ -1,4 +1,3 @@
-/* eslint-disable jsx-a11y/alt-text */
 import {useDispatch, useSelector} from "react-redux";
 import React, {useEffect, useState} from "react";
 import {createSongsThunk, deleteSongThunk, findAllSongsThunk} from "./songs-thunks";
@@ -78,12 +77,91 @@ const Songs = () => {
                 currentUser &&
                 <h2>Welcome {currentUser.username} </h2>
             }
-            
+            <ul className="list-group">
+                <li className="list-group-item">
+                    <button className="btn btn-success float-end" onClick={() => {
+                        dispatch(createSongsThunk(
+                            {
+                                title: song.title
+                            }
+                        ))
+                    }}>Create</button>
+                    <input
+                        className="form-control w-75"
+                        onChange={(e) =>
+                            setSong({...song, title: e.target.value})}
+                        value={song.title}/>
+                </li>
+
+                {
+                    songs.map((song) =>
+                        <li className="list-group-item"
+                            key={song._id}>
+                            <i onClick={() => {
+                                dispatch(deleteSongThunk(song._id))
+                            }}
+                                className="bi bi-trash float-end"></i>
+
+                            <i onClick={() => {
+                                dispatch(userLikesSongThunk({
+                                    uid: 111, mid: song._id
+                                }))
+                            }} className="float-end bi bi-hand-thumbs-up me-2"></i>
+                            <i className="float-end bi bi-hand-thumbs-down me-2"></i>
+
+
+                            {song.title}
+                        </li>
+                    )
+                }
+            </ul>
             <Container>
                 <a className="btn btn-success float-end m-2" href={AUTH_URL}>
                     Login with Spotify
                 </a>
             </Container>
+
+            <hr></hr>
+            <h2>Top Songs</h2>
+            <ul className="musiclist-main">
+            { artistSongs && artistSongs.map((song) => {
+                return (
+                    <article className="music-list-item-main">
+                        <img src={song.album.images[0].url}/>
+                        <h3 className="song-title-main">{song.name}</h3>
+                        <b><p className="song-creator-main">{song.artists[0].name}</p></b>
+                        <p className="song-creator-main">{song.album.name}</p>
+                    </article>
+                )
+            })}
+            </ul>
+
+            <hr></hr>
+            <h2>Top Albums</h2>
+            <ul className="musiclist-main">
+                { artistAlbums && artistAlbums.map((album) => {
+                    return (
+                        <article className="music-list-item-main">
+                            <img src={album.images[0].url}/>
+                            <h3 className="song-title-main">{album.name}</h3>
+                            <b><p className="song-creator-main">{album.release_date}</p></b>
+                        </article>
+                    )
+                })}
+            </ul>
+
+            <hr></hr>
+            <h2>Related Artists</h2>
+                <ul className="artistlist">
+                { relatedArtists && relatedArtists.map((artist) => {
+                    return (
+                        <article className="artist-list-item">
+                            <img className="artist-pic" src={artist.images[0].url}/>
+                            <h3 className="song-title">{artist.name}</h3>
+                        </article>
+                    )
+                })}
+            </ul>
 
             <hr></hr>
             <h2>New Releases</h2>
